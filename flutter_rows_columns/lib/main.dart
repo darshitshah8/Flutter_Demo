@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,41 +37,55 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text("Container"),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Container(
+                height: 500,
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey,
+                  borderRadius: BorderRadius.circular(10)
+                ),
 
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
 
-          child: SingleChildScrollView(
-
-            scrollDirection: Axis.horizontal,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ElevatedButton(
-                    child: Text("Rows 1"),
-                    onPressed: (){
-                      print("Button Clicked");
-                    }),
-                  ElevatedButton(
-                    child: Text("Rows 2"),
-                    onPressed: (){
-                      print("Button Clicked");
-                    }),
-                  Text("Rows 2"),
-                  Text("Rows 3"),
-                  Column(
-                    children: [
-                      Text("Column  1"),
-                      Text("Column  1"),
-                      Text("Column  1")
-                    ],
-                  )
-                ],
+                    Text("A"),
+                    Text("B"),
+                    Text("C"),
+                    Text("D"),
+                    ElevatedButton(onPressed: (){}, child: Text("Ok"))
+                  ],
+                ),
               ),
-            ),
+              SizedBox(height: 10,),
+              Container(
+                width: 500,
+                height: 400,
+                decoration: BoxDecoration(
+                    color: Colors.blueGrey,
+                    borderRadius: BorderRadius.circular(10)
+                ),
+
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+
+                    Text("A"),
+                    Text("B"),
+                    Text("C"),
+                    Text("D"),
+                    ElevatedButton(onPressed: (){}, child: Text("Ok"))
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
