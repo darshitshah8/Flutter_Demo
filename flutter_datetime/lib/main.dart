@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:intl/intl.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("Current time  is ${time.hour} : ${time.minute} : ${time.second}"),
+          Text("Current time  is ${DateFormat('jms').format(time)}"),
           SizedBox(height: 20,),
           ElevatedButton(
             onPressed: (){
